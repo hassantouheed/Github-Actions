@@ -6,8 +6,10 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
+        - name: checkout repo
+          uses: actions/checkout@v6
         - name: Welcome Message
-          run: echo "My First job"
+          run: echo "My First job"  
         - name: list files
           run: ls 
         - name: Read file
