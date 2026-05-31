@@ -14,7 +14,7 @@ jobs:
             ls -al
             cat README.md 
         - name: Generate ASCII Network
-          run:  cowsay -f parrot "This is parrot ASCII diagram" >> parrot.txt
+          run:  cowsay -f dragon "This is parrot ASCII diagram" >> parrot.txt
        # - name: list files
        #   run: ls 
        # - name: Read file
