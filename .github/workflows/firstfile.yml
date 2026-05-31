@@ -8,9 +8,14 @@ jobs:
         steps:
         - name: checkout repo
           uses: actions/checkout@v6
-        - name: Welcome Message
-          run: echo "My First job"  
-        - name: list files
-          run: ls 
-        - name: Read file
-          run: cat README.md
+        - name: List and Read File
+          run: |
+            echo "File Listing"
+            ls -al
+            cat README.md 
+        - name: Generate ASCII Network
+          run:  cowsay -f parrot "This is parrot ASCII diagram" >> parrot.txt
+       # - name: list files
+       #   run: ls 
+       # - name: Read file
+       #   run: cat README.md
