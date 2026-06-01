@@ -14,10 +14,10 @@ jobs:
         run: sudo apt-get install cowsay -y
 
       - name: Excecute conwsay command
-        run: cowsay -f parrot "This is parrot ASCII diagram" > parrot.txt
+        run: cowsay -f dragon "This is parrot ASCII diagram" > parrot.txt
       
       - name: Test File Exists
-        run: grep -i parrot "parrot.txt"
+        run: grep -i dragon "parrot.txt"
         
       - name: Read file
         run: cat parrot.txt
