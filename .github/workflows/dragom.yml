@@ -17,7 +17,7 @@ jobs:
         run: cowsay -f dragon "This is parrot ASCII diagram" > parrot.txt
       
       - name: Test File Exists
-        run: grep -i "dragon" parrot.txt
+        run: grep -i "This is parrot ASCII diagram" parrot.txt
         
       - name: Read file
         run: cat parrot.txt
