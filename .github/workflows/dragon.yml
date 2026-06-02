@@ -1,14 +1,20 @@
 name: practice_workflow
-on: push
-jobs:
-    first_job:
-        runs-on: ubuntu-latest
-    steps:
-        - name: Checkout-Repo
-          uses: actions/checkout@v4
-        
-        - name: Reading from file
-          run: cat test1.txt
 
-        - name: Executing shell script
-          run: ./shellscript.sh
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout-Repo
+        uses: actions/checkout@v4
+
+      - name: Reading from file
+        run: cat test1.txt
+
+      - name: Give execute permission
+        run: chmod +4 shellscript.sh
+
+      - name: Executing shell script
+        run: ./shellscript.sh
