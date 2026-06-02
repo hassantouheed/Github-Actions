@@ -10,8 +10,8 @@ jobs:
       - name: Checkout-Repo
         uses: actions/checkout@v4
 
-      - name: Reading from file
-        run: cat test1.txt
+      - name: List Repo Files
+        run: ls -l
 
       - name: Give execute permission
         run: chmod +4 shellscript.sh
