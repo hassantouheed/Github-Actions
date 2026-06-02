@@ -14,7 +14,7 @@ jobs:
         run: ls -l
 
       - name: Give execute permission
-        run: chmod +4 shellscript.sh
+        run: chmod +x shellscript.sh
 
       - name: Executing shell script
         run: ./shellscript.sh
