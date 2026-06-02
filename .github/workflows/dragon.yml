@@ -13,8 +13,7 @@ jobs:
       - name: List Repo Files
         run: ls -l
 
-      - name: Give execute permission
-        run: chmod +x shellscript.sh
-
       - name: Executing shell script
-        run: ./shellscript.sh
+        run: |
+          chmod +x shellscript.sh
+          ./shellscript.sh
