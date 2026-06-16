@@ -1,6 +1,6 @@
-#!/bin/bash
-sudo apt-install cowsay -y
-cowsay -f parrot "This is parrot ASCII generation lines" parrot.txt
-grep -i "parrot" parrot.txt
-cat parrot.txt
-ls 
+#/bin/bash
+sudo apt-get install cowsay -y
+cowsay -f dragon "Run for cover, I will see the image of dragon cowsay"  >> cowsay1.txt
+grep -i "dragon" cowsay1.txt
+cat cowsay1.txt
+ls -l

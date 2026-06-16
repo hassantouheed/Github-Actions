@@ -9,18 +9,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
-
-      - name: Install Cowsay program
-        run: sudo apt-get install cowsay -y
-
-      - name: Excecute conwsay command
-        run: cowsay -f dragon "This is parrot ASCII diagram" > parrot.txt
-      
-      - name: Test File Exists
-        run: grep -i "This is parrot ASCII diagram" parrot.txt
-        
-      - name: Read file
-        run: cat parrot.txt
-
-      - name: Checkout Repo files
-        run: ls -al
+      - name: List Repo Files
+        run: ls -l
+      - name: Executing Shell Script
+        run: ./shellscript.sh 
