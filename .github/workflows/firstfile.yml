@@ -13,5 +13,5 @@ jobs:
         run: ls -l
       - name: Executing Shell Script
         run: |
-          chmod +x shellscript.sh
-          ./shellscript.sh
+          chmod +x file1.sh
+          ./file1.sh
