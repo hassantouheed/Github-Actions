@@ -1,0 +1,38 @@
+name: Running Multiple Jobs
+
+on:
+  push
+
+jobs:
+  build_job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Cowsay Program
+      run:  sudo apt-get install cowsay -y
+    - name: Execute Cowsay Command
+      run: cowsay -f dragon "This is content for dragon.txt " >> dragon.txt
+    - name: Upload dragon text file
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: path/to/artifact/world.txt
+  test_job2:
+    needs: build_job1
+    runs-on: ubuntu-latest 
+    steps:
+    - name: Download Dragon Text File
+      uses: actions/download-artifact@v3
+      with:
+        name: dragon-text-file
+    - name: Test File Exists
+      run: grep -i "dragon" dragon.txt 
+    deploy_job3:
+    needs: [test_job2]
+    runs-on: ubuntu-latest 
+    steps:
+    - name: Download Dragon Text File
+      uses: actions/download-artifact@v3
+      with:
+        name: dragon-text-file
+    - name: Deploy
+      run: echo Deploying ...... 
