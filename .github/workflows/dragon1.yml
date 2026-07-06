@@ -27,7 +27,7 @@ jobs:
     - name: Test File Exists
       run: grep -i "dragon" dragon.txt 
   deploy_job3:
-    needs: [test_job2]
+    needs: test_job2
     runs-on: ubuntu-latest 
     steps:
     - name: Download Dragon Text File
