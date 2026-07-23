@@ -7,14 +7,17 @@ jobs:
   build_job1:
     runs-on: ubuntu-latest
 
-   steps:
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
       - name: Docker Login
-        run: echo docker login --password=${{ secrets.Docker_Password }}
+        run: echo "docker login --password=${{ secrets.Docker_Password }}"
 
       - name: Install Cowsay Program
-        run: sudo apt-get update && sudo apt-get install cowsay -y
+        run: |
+          sudo apt-get update
+          sudo apt-get install cowsay -y
 
       - name: Create Dragon Text File
         run: |
